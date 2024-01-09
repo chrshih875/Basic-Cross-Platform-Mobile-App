@@ -28,16 +28,15 @@ const AddTask = ({ navigation }) => {
 
       return (
         <View>
-          <Text>Add a New Task:</Text>
           <TextInput
             value={name}
             onChangeText={(text) => setName(text)}
-            placeholder="Enter name"
+            placeholder="Enter Name"
           />
           <TextInput
             value={task}
             onChangeText={(text) => setTask(text)}
-            placeholder="Enter task"
+            placeholder="Enter Task"
           />
           <Button title="Add Task" onPress={handleAddItem} />
         </View>
