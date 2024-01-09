@@ -11,4 +11,4 @@
 10. On your iPhone or iPad, open the default Apple Camera app and scan the QR code you see in the terminal.
 11. If for someone reason it is not loading, just click refresh or try restarted the expo server.
 12. If issue persist after a couple retires, stop expo server and enter this into the ide: npx expo start --tunnel
-13. redo step 10-11.
+13. redo step 9-10.
