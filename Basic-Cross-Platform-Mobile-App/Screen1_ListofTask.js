@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Button, TouchableOpacity, Alert } from 'react-native';
+import { View, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Table, Row } from 'react-native-table-component';
 
@@ -34,22 +34,22 @@ const ListofTask = ({ navigation }) => {
 
     return (
         <View>
-            <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
+          <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
             <Row
-                data={tableHead}
-                style={{ height: 40, backgroundColor: '#f1f8ff' }}
+              data={tableHead}
+              style={{ height: 40, backgroundColor: '#f1f8ff' }}
             />
             {tableData.map((rowData, index) => (
-                <Row
+              <Row
                 key={index}
                 data={rowData}
                 style={{ height: 40 }}
-                />
+              />
             ))}
-            </Table>
-            <Button title="Add New Task" onPress={handleAddItem} />
+          </Table>
+          <Button title="Add New Task" onPress={handleAddItem} />
         </View>
-        );
+      );
 };
 
 export default ListofTask;
