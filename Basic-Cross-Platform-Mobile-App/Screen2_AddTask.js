@@ -9,15 +9,15 @@ const AddTask = ({ navigation, route }) => {
 
     const handleAddItem = () => {
         if (name.trim() !== '' && task.trim() !== '') {
-          const newItem = { id: data.length + 1, name, task };
-          navigation.navigate('Screen1', { data: [...data, newItem] });
+          const newTask = { id: data.length + 1, name, task };
+          navigation.navigate('List of Task', { data: [...data, newTask] });
         } else {
         }
       };
 
       return (
         <View>
-          <Text>Add a New Item:</Text>
+          <Text>Add a New Task:</Text>
           <TextInput
             value={name}
             onChangeText={(text) => setName(text)}
@@ -28,7 +28,7 @@ const AddTask = ({ navigation, route }) => {
             onChangeText={(text) => setTask(text)}
             placeholder="Enter task"
           />
-          <Button title="Add Item" onPress={handleAddItem} />
+          <Button title="Add Task" onPress={handleAddItem} />
         </View>
       );
 };
