@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Table, Row } from 'react-native-table-component';
+import Swipeout from 'react-native-swipeout';
 
 const ListofTask = ({ navigation }) => {
     const [tasks, setTasks] = useState([]);
@@ -29,8 +30,24 @@ const ListofTask = ({ navigation }) => {
         navigation.navigate('Add Task', { tasks });
     };
 
+    const handleDeleteItem = async (id) => {
+      const updatedTasks = tasks.filter((task) => task.id !== id);
+      await AsyncStorage.setItem('todos', JSON.stringify(updatedTasks));
+      setTasks([...updatedTasks]);
+    };
+
+    const swipeoutButton = (item) => {
+      return [
+        {
+          text: 'Delete',
+          onPress: () => handleDeleteItem(item),
+          backgroundColor: 'red',
+        },
+      ];
+    };
+
     const tableHead = ['Name', 'Task'];
-    const tableData = tasks.map(item => [item.name, item.task]);
+    const tableData = tasks.map((item) => [item.id, item.name, item.task,]);
 
     return (
         <View>
@@ -40,12 +57,13 @@ const ListofTask = ({ navigation }) => {
               style={{ height: 40, backgroundColor: '#add8e6'}}
               textStyle={{ padding: 10, textAlign: 'center', fontWeight: 'bold' }}
             />
-            {tableData.map((rowData, index) => (
+            {tableData.map((item) => (
+              <Swipeout right={swipeoutButton(item[0])} key={item[0]}>
               <Row
-                key={index}
-                data={rowData}
+                data={item.slice(1)}
                 style={{ height: undefined }}
               />
+              </Swipeout>
             ))}
           </Table>
           <Button title="Add New Task" onPress={handleAddItem} />

@@ -18,7 +18,10 @@
     "react-native": "0.72.6",
     "react-native-dropdown-picker": "^5.4.6",
     "react-native-modal": "^13.0.1",
-    "react-native-table-component": "^1.2.2"
+    "react-native-swipeout": "latest",
+    "react-native-table-component": "^1.2.2",
+    "react-native-uuid": "^2.0.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
