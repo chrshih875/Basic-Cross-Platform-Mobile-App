@@ -11,7 +11,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Screen1">
-        <Stack.Screen name="List of Task" component={ListofTask} />
+        <Stack.Screen name="List of Tasks" component={ListofTask} />
         <Stack.Screen name="Add Task" component={AddTask} />
         <Stack.Screen name="Edit Task" component={EditTask} />
       </Stack.Navigator>

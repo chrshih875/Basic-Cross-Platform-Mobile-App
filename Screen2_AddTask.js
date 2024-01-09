@@ -32,7 +32,7 @@ const AddTask = ({ navigation }) => {
             await AsyncStorage.setItem('todos', JSON.stringify(newData));
             await AsyncStorage.setItem('lastId', String(lastId + 1));
             setLastId(lastId + 1);
-            navigation.navigate('List of Task', { data: newData });
+            navigation.navigate('List of Tasks', { data: newData });
           } catch (error) {
             console.error('Error adding item:', error);
           }

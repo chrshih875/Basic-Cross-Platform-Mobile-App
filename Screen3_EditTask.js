@@ -16,7 +16,7 @@ const EditTask = ({ route, navigation }) => {
         data[index] = { id: item[0], name, task };
 
         await AsyncStorage.setItem('todos', JSON.stringify(data));
-        navigation.navigate('List of Task');
+        navigation.navigate('List of Tasks');
         } catch (error) {
         console.error('Error editing item:', error);
         }
