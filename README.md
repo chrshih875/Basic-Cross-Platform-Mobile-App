@@ -1,12 +1,14 @@
 # Basic-Cross-Platform-Mobile-App
-
 1. Download Expo Go on your mobile app
 2. create a login for the Expo Go mobile app
 3. Install Node.js here: https://nodejs.org/en/download
-4. clone repository and open in a ide
-5. in your command line enter:
-    cd Basic-Cross-Platform-Mobile-App
-    npm init --yes
-    npm install -g expo-cli
-    npx expo start --tunnel
-6. Back onto your Expo Go mobile app and QR code scan and the application will launch.
+4. clone the repository and open it in an ide
+5. in your ide enter:
+6. npm install
+7. npm install -g expo-cli
+8. npx expo start
+9. On your Android device, press Scan QR Code on the Home tab of the Expo Go app and scan the QR code you see in the terminal.
+10. On your iPhone or iPad, open the default Apple Camera app and scan the QR code you see in the terminal.
+11. If for someone reason it is not loading, just click refresh or try restarted the expo server.
+12. If issue persist after a couple retires, stop expo server and enter this into the ide: npx expo start --tunnel
+13. redo step 10-11.
