@@ -37,13 +37,14 @@ const ListofTask = ({ navigation }) => {
           <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
             <Row
               data={tableHead}
-              style={{ height: 40, backgroundColor: '#f1f8ff' }}
+              style={{ height: 40, backgroundColor: '#add8e6'}}
+              textStyle={{ padding: 10, textAlign: 'center', fontWeight: 'bold' }}
             />
             {tableData.map((rowData, index) => (
               <Row
                 key={index}
                 data={rowData}
-                style={{ height: 40 }}
+                style={{ height: undefined }}
               />
             ))}
           </Table>

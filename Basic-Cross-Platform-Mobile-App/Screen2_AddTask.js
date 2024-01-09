@@ -44,7 +44,7 @@ const AddTask = ({ navigation }) => {
                 borderBottomWidth: 1,
                 marginBottom: 20,
               }}
-              placeholder="Task "
+              placeholder="Task"
               value={task}
               onChangeText={(text) => setTask(text)}
             />
