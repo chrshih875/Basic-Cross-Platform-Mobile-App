@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ListofTask from './Screen1_ListofTask';
 import AddTask from './Screen2_AddTask';
+import EditTask from './Screen3_EditTask';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Screen1">
         <Stack.Screen name="List of Task" component={ListofTask} />
         <Stack.Screen name="Add Task" component={AddTask} />
+        <Stack.Screen name="Edit Task" component={EditTask} />
       </Stack.Navigator>
     </NavigationContainer>
   );

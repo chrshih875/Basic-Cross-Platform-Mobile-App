@@ -30,6 +30,10 @@ const ListofTask = ({ navigation }) => {
         navigation.navigate('Add Task', { tasks });
     };
 
+    const handleEditItem = (item) => {
+      navigation.navigate('Edit Task', { item });
+    };
+
     const handleDeleteItem = async (id) => {
       const updatedTasks = tasks.filter((task) => task.id !== id);
       await AsyncStorage.setItem('todos', JSON.stringify(updatedTasks));
@@ -39,8 +43,13 @@ const ListofTask = ({ navigation }) => {
     const swipeoutButton = (item) => {
       return [
         {
+          text: 'Edit',
+          onPress: () => handleEditItem(item),
+          backgroundColor: 'green',
+        },
+        {
           text: 'Delete',
-          onPress: () => handleDeleteItem(item),
+          onPress: () => handleDeleteItem(item[0]),
           backgroundColor: 'red',
         },
       ];
@@ -50,7 +59,7 @@ const ListofTask = ({ navigation }) => {
     const tableData = tasks.map((item) => [item.id, item.name, item.task,]);
 
     return (
-        <View>
+        <View style={{ padding: 10 }}>
           <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
             <Row
               data={tableHead}
@@ -58,7 +67,7 @@ const ListofTask = ({ navigation }) => {
               textStyle={{ padding: 10, textAlign: 'center', fontWeight: 'bold' }}
             />
             {tableData.map((item) => (
-              <Swipeout right={swipeoutButton(item[0])} key={item[0]}>
+              <Swipeout right={swipeoutButton(item)} key={item[0]}>
               <Row
                 data={item.slice(1)}
                 style={{ height: undefined }}

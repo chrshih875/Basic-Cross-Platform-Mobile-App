@@ -43,7 +43,6 @@ const AddTask = ({ navigation }) => {
         }
       };
       return (
-        <ScrollView>
           <View style={{ padding: 10 }}>
             <TextInput
               style={{
@@ -67,7 +66,6 @@ const AddTask = ({ navigation }) => {
             />
             <Button title="Add Task" onPress={handleAddItem} />
           </View>
-        </ScrollView>
       );
 };
 

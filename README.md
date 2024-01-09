@@ -1,5 +1,5 @@
 # Basic-Cross-Platform-Mobile-App
-This Mobile App allows you to create a list of to do tasks. You are also able to delete tasks by swiping left on the tasks you want to delete.
+This Mobile App allows you to create a list of to do tasks. You are also able to delete and edit task by swiping left on the tasks.
 
 Here is how to get it running:
 1. Download Expo Go on your mobile app
