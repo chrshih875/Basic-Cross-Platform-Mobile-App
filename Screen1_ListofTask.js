@@ -70,11 +70,17 @@ const ListofTask = ({ navigation }) => {
               <Swipeout right={swipeoutButton(item)} key={item[0]}>
               <Row
                 data={item.slice(1)}
-                style={{ height: undefined }}
+                style={{
+                  height: undefined,
+                  padding: 12,
+                  borderBottomWidth: 1,
+                  borderBottomColor: '#C1C0B9',
+                }}
               />
               </Swipeout>
             ))}
           </Table>
+
           <Button title="Add New Task" onPress={handleAddItem} />
         </View>
       );
