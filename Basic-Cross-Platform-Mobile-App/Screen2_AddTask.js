@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { View, TextInput, Button, Alert, ScrollView  } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AddTask = ({ navigation }) => {
@@ -20,26 +20,37 @@ const AddTask = ({ navigation }) => {
             console.error('Error adding item:', error);
           }
         } else {
-          Alert.alert('Error', 'Please enter both a name and a task.', [
+                Alert.alert('Error', 'Please enter both a name and a task.', [
             { text: 'Redo', onPress: () => console.log('Redo Pressed') },
           ]);
         }
       };
-
       return (
-        <View>
-          <TextInput
-            value={name}
-            onChangeText={(text) => setName(text)}
-            placeholder="Enter Name"
-          />
-          <TextInput
-            value={task}
-            onChangeText={(text) => setTask(text)}
-            placeholder="Enter Task"
-          />
-          <Button title="Add Task" onPress={handleAddItem} />
-        </View>
+        <ScrollView>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              style={{
+                padding: 10,
+                borderBottomWidth: 1,
+                marginBottom: 10,
+              }}
+              placeholder="Name"
+              value={name}
+              onChangeText={(text) => setName(text)}
+            />
+            <TextInput
+              style={{
+                padding: 10,
+                borderBottomWidth: 1,
+                marginBottom: 20,
+              }}
+              placeholder="Task "
+              value={task}
+              onChangeText={(text) => setTask(text)}
+            />
+            <Button title="Add Task" onPress={handleAddItem} />
+          </View>
+        </ScrollView>
       );
 };
 
